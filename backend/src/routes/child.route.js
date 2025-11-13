@@ -23,10 +23,10 @@ router.get('/cartpage', protect,  async (req, res) =>{
 
         
         
-        let items = await CartProduct.find({ parentId: parentId }) ;
+        let cart = await CartProduct.find({ childId: childId }) ;
         
-        console.log(items);
-        return res.json(items);
+        console.log(cart);
+        return res.json(cart);
     }catch(err){
         return res.status(500).json({message: err.message});
     }

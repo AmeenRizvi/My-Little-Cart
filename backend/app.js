@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import cookieParser from "cookie-parser";
 import child_routes from './src/routes/child.route.js';
 import parent_routes from './src/routes/parent.route.js';
+import product_routes from './src/routes/product.route.js';
 
 const app = express();
 const PORT= 5000;
@@ -29,7 +30,7 @@ connectDB();
 
 app.use('/api/child', child_routes);
 app.use('/api/parent', parent_routes);
-
+app.use('/api/products', product_routes);
 
 
 

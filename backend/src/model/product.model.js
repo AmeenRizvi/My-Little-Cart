@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
-const productSchema = new mongoose.schema({
+const productSchema = new mongoose.Schema({
+    p_id : {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     name : {
         type: String,
         required: true,
@@ -10,12 +15,12 @@ const productSchema = new mongoose.schema({
         required: true,
     },
     originalPrice : {
-        type: Number,
-        required: true,
+        type: Number
+        
     },
     image : {
-        type: String,
-        required: true,
+        type: String
+        
     },
     rating : {
         type: Number,
